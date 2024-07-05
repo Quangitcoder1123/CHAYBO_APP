@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+
+
+    tools:context=".countstep.PedometerListActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@color/background"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/back"
+            android:drawableLeft="@drawable/ic_baseline_arrow_back_24"
+            android:textColor="#000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Count Step"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20dp"/>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_margin="20sp"
+        android:padding="10px"
+
+        android:id="@+id/lnlayout"
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:layout_gravity="center"
+
+        android:background="@drawable/nen"
+        android:orientation="horizontal"
+        android:scrollbarAlwaysDrawHorizontalTrack="true">
+
+
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="List"
+        android:textSize="17sp"
+        android:paddingLeft="20sp"/>
+    <ListView
+        android:padding="20sp"
+        android:id="@+id/steps_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>

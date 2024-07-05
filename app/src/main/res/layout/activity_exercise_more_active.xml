@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Exercise.view.ExerciseMoreActive"
+    android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@color/background"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/back"
+            android:drawableLeft="@drawable/ic_baseline_arrow_back_24"
+            android:textColor="#000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="More Exercise"
+            android:layout_marginEnd="40sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20dp"/>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#A5F2FF"
+        >
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp">
+            <SearchView
+                android:layout_marginTop="5sp"
+                android:id="@+id/searchView"
+                android:layout_width="300dp"
+                android:layout_height="40sp"
+                android:layout_weight="5"
+                android:background="@drawable/border"
+                android:baselineAligned="false"
+                android:autofillHints="search"
+
+                android:inputType="textFilter|text"></SearchView>
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:text="find" />
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingStart="20sp"
+            android:paddingEnd="20sp"
+            android:layout_marginTop="2sp">
+            <CheckBox
+                android:id="@+id/cb_beginner"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:shadowColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Beginner"
+                android:textColor="@color/Beginner"/>
+            <CheckBox
+                android:textSize="12sp"
+                android:id="@+id/cb_intermediate"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:shadowColor="@color/black"
+                android:layout_height="wrap_content"
+                android:text="Intermediate"
+                android:textColor="@color/Intermediate"/>
+            <CheckBox
+                android:textSize="12sp"
+                android:id="@+id/cb_advanced"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Advanced"
+                android:shadowColor="@color/black"
+                android:textColor="@color/Advanced"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:background="#A5F2FF"
+        android:id="@+id/rcc_exercise"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="161dp" />
+
+</LinearLayout>

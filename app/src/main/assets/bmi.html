@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Calendar</title>
+
+    <style>
+/* Import Roboto font from Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+/*
+  Define CSS variables for colors
+*/
+:root {
+  --background-color: #f6f6f6;
+  --vigo-color: #f09831;
+  --slider-color: #A3A3A3;
+  --input-number-color: #EBEBEB;
+}
+/* Prepare your work table. 😎 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*
+  Push sliders down from <h1> tag
+*/
+h1 {
+  text-align: center;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  margin-bottom: 0.9em;
+}
+/*
+  Define positioning of the elements inside <body>
+*/
+html,
+body {
+  height: 100%; width: 100%;
+  margin: 0; padding: 0;
+  background-color: var(--background-color);
+  color: black;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+/*
+  Styling for calculator <div>
+*/
+.bmi-calculator {
+  border: 5px solid white;
+  -moz-box-shadow: 0px 0px 5px hsl(15, 2%, 55%);
+  -webkit-box-shadow: 0px 0px 5px hsl(15, 2%, 55%);
+  box-shadow: 0px 0px 10px hsl(0,0%,73.9%);
+  padding: 3em;
+  margin: 2em;
+  height: 520px;
+  background-color: white;
+}
+/*
+  Styling for div elements wrapping both sliders
+*/
+.bmi-calculator-weight, .bmi-calculator-height {
+  /* Positioning */
+  /*border: dotted 1px red;*/
+  margin-bottom: 2.2em;
+  width: 100%;
+  /* background:
+    repeating-linear-gradient(90deg, #c8c8c8, #c8c8c8 0.125em /* lines *//*, transparent 0.125em, transparent 1.25em /* space between
+      *//*) 80% no-repeat;
+  /*background-size: 100% /* = 10*1.25em + .125em */ /*20%;*/
+}
+/*
+  Styling for both sliders
+*/
+.weight-slider, .height-slider {
+  width: 100%;
+  height: 1px;
+  border-radius: 10px;
+  background: var(--slider-color); /* Light grey background. */
+  outline: none; /* Remove outline. */
+  /*opacity: 0.7; *//* Set transparency (for mouse-over effects on hover) */
+  /*-webkit-transition: .2s;*/ /* 0.2 seconds transition on hover */
+  /*transition: opacity .2s;*/
+}
+
+/* Mouse-over effects 🖱 računalniška miška */
+/*.weight-slider:hover, .height-slider:hover *//*{
+  opacity: 1; *//* Fully shown on mouse-over *//*
+}*/
+
+
+/* DEFINE STYLING FOR INPUT RANGE SLIDERS & INPUT TYPE NUMBER FOR BROWSER COMPATIBILITY
+  https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
+*/
+input[type=range] {
+  -moz-appearance: none; /* Override default CSS styles */
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 2.5px solid var(--vigo-color);
+  height: 20px;
+  width: 20px;
+  border-radius: 40px;
+  background: white;
+  cursor: pointer;
+  margin-top: 0px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  /* box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; */ /* Add cool effects to your sliders! */
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  /* box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; */
+  border: 2.5px solid var(--vigo-color);
+  height: 20px;
+  width: 20px;
+  border-radius: 40px;
+  background: white;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  /* box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; */
+  border: 2.5px solid var(--vigo-color);
+  height: 20px;
+  width: 20px;
+  border-radius: 40px;
+  background: white;
+  cursor: pointer;
+}
+
+/* INPUT TYPE NUMBER STYLING*/
+input[type=number] {
+  -moz-appearance: none; /* Override default CSS styles */
+  -webkit-appearance: none;
+  cursor: pointer;
+  /* Real styling part :D */
+  background: var(--input-number-color);
+  border-style: none;
+  height: 30px;
+  width: 60px;
+  margin-left: 20px;
+  margin-right: 10px;
+  text-align: right;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5em;
+}
+
+input[type=number]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+/*
+  *** END OF DEFAULT STYLING VALUES FOR INPUT RANGE SLIDERS & INPUT TYPE NUMBER ***
+*/
+
+/*
+  Styling for "Calculate" button
+*/
+.gumb {
+  text-align: center;
+  font-size: 1em;
+  color: white;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 11px 32px;
+  border: none;
+  background-color: var(--vigo-color);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/*
+  Media querie for iPhone 5
+*/
+@media only screen and (max-width: 325px) {
+  .bmi-calculator {
+    height: 560px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+<form name="bmiForm">
+    <div class="bmi-calculator">
+        <h1 style="margin-bottom: 1em;">Calculate your BMI</h1>
+        <div class="bmi-calculator-weight">
+            <input class="weight-slider" name="realweight" id="myWeight" type="range" min="25" max="180" value="60"/>
+            <p style="margin-top: 1.8em;">
+                WEIGHT:
+                <input name="Teža" id="inputWeight" type="number" value="60" min="25" max="180" step="1" oninput="showValWeight(this.value)"/>
+                <span id="weight"></span> kg
+            </p>
+        </div>
+        <div class="bmi-calculator-height">
+            <input class="height-slider" name="realheight" id="myHeight" type="range" min="100" max="220" step="1" value="160">
+            <p style="margin-top: 1.8em;">
+                HEIGHT:
+                <input name="Višina" id="inputHeight" type="number" value="160" min="100" max="220" step="1" oninput="showValHeight(this.value)"/>
+                <span id="height"></span> cm
+            </p>
+        </div>
+        <input class="gumb" type="button" value="Calculate" onclick="calculateBmi()" style="margin-top: 0.5em">
+        <p style="margin-top: 1em;font-size: 1.2em;">
+            <strong>Your BMI:</strong>
+            <span id="yourbmi" style="font-size: 1.2em;margin-left: 8px;"></span>
+        </p>
+        <p></p>
+        <p>
+            <span id="evaluationMessage"></span>
+        </p>
+    </div>
+</form>
+<script>
+	'use strict';
+// Define variables for range sliders
+// Weight variables
+var weightSlider = document.getElementById("myWeight");
+var weightOutput = document.getElementById("inputWeight");
+// Height variables
+var heightSlider = document.getElementById("myHeight");
+var heightOutput = document.getElementById("inputHeight");
+// Display slider value
+weightOutput.innerHTML = weightSlider.value;
+heightOutput.innerHTML = heightSlider.value;
+// Update sliders in real time while dragging it
+weightSlider.oninput = function () {
+  weightOutput.innerHTML = this.value;
+}
+heightSlider.oninput = function () {
+  heightOutput.innerHTML = this.value;
+}
+// Change weight-slider value on weight-number input
+function showValWeight(newVal) {
+  weightSlider.value=newVal;
+};
+// Change height-slider value on height-number input
+function showValHeight(newVal) {
+  heightSlider.value=newVal;
+};
+// *** Change number input when dragging slider ***
+// Add 2 eventListeners for weight and input sliders
+weightSlider.addEventListener("input", updateValueWeight);
+heightSlider.addEventListener("input", updateValueHeight);
+function updateValueWeight(e) {
+  weightOutput.value = e.srcElement.value;
+}
+function updateValueHeight(e) {
+  heightOutput.value = e.srcElement.value;
+}
+// Calculate BMI
+function calculateBmi() {
+  var weight = document.bmiForm.realweight.value;
+  var height = (document.bmiForm.realheight.value)/100;
+  var realbmi = (weight)/Math.pow(height, 2);
+  var realbmiOutput = document.getElementById("yourbmi");
+  var messageOutput = document.getElementById("evaluationMessage");
+  var roundedBmi = realbmi.toFixed(1);
+  messageOutput.innerHTML = ""; // Clear message before calculating new BMI
+  realbmiOutput.innerHTML = " " + roundedBmi; // Print BMI
+  // Appropriate message for your BMI rating
+  if (roundedBmi > 26) {
+    messageOutput.innerHTML = "It's Show Time";
+  } else {
+
+  }
+  // Console loggings
+  console.log('Teža: ' + weight + " kg");
+  console.log('Višina: ' + height + " m");
+  console.log('BMI: ' + realbmi);
+}
+
+</script>
+</body>
+
+</html>

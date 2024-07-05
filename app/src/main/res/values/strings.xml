@@ -1,0 +1,117 @@
+<resources>
+    <string name="channel_name">Channel Active Life</string>
+    <string name="channel_description">This is a channel Active Life</string>
+    <string name="app_name">Active Life</string>
+
+    <string name="get_started">Get Started</string>
+    <string name="drawerOpen">drawerOpen</string>
+    <string name="drawerClose">drawerClose</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="todo">TODO</string>
+
+
+    <string name="menu_profile">Profile</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_fitness">Fitness</string>
+    <string name="unit">Cm</string>
+    <string name="femaletext">Female</string>
+    <string name="age">Age</string>
+    <string name="startingheight">170</string>
+    <string name="startingweight">55</string>
+    <string name="startingage">22</string>
+    <string name="height">Height</string>
+    <string name="calculate_your_bmi">Calculate Your BMI</string>
+    <string name="weight">Weight</string>
+    <string name="male">Male</string>
+    <string name="login">Login</string>
+    <string name="splashurl">https://lottiefiles.com/24366-workout-monkey-stay-healthy</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="quote1">The only person you are destined to become is the person you decide to be.</string>
+    <string name="quote2">Once you learn to quit, it becomes a habit.</string>
+    <string name="quote3">A year from now you may wish you had started today.</string>
+    <string name="quote4">Look in the mirror. That’s your competition.</string>
+    <string name="quote5">A feeble body weakens the mind.</string>
+    <string name="quote6">Put all excuses aside and remember this: You are capable.</string>
+    <string name="quote7">Reading is to the mind what exercise is to the body.</string>
+    <string name="quote8">Success is what comes after your stop making excuses.</string>
+    <string name="quote9">The pain you feel today will be the strength you feel tomorrow.</string>
+    <string name="quote10">A champion is someone who gets up when they can’t.</string>
+    <string name="quote11">Get comfortable with being uncomfortable!</string>
+    <string name="quote12">No pain, no gain.</string>
+    <string name="pushup">Pushups are a simple and effective bodyweight movement that can help increase strength in your upper body and core.</string>
+    <string name="pullup">The pull-up is a closed-chain movement where the body is suspended by the hands and pulls up</string>
+    <string name="squats">Strength exercise in which the trainee lowers their hips from a standing position and then stands back up</string>
+    <string name="tplank">Inner core exercise which helps reduce body fat and increase core strength</string>
+    <string name="deadbug">The dead bug is a bodyweight exercise that targets your abdominal muscles.</string>
+    <string name="skipping">User jumps avoiding the incoming rope to increase stamina and it serves as warmup</string>
+    <string name="heavysquats">Strength exercise of lower body done but using weights to improve legs,calf,thighs</string>
+    <string name="splitjump">Split jumps are a plyometric exercise that strengthen the glutes and leg muscles</string>
+    <string name="virkshasana">Tree Pose is a balancing asana</string>
+    <string name="cobrasana">Gentle backbend practiced from a face-down position that warms and strengthens the spine while opening the chest</string>
+    <string name="pranayama">The practice of pranayama involves breathing exercises and patterns.</string>
+    <string name="yogasana">This asana is a meditation on determination and perseverance, as well as commitment.</string>
+    <string name="utkatasana1"> It is a strengthening and heat-building asana</string>
+    <string name="tvmar">Calisthenics will be added soon. Don\'t forget to drink water and stay hydrated</string>
+
+    <string name="pose1">    Step 1:- Start in the push-up position with your arms completely straight and directly beneath your shoulders.\n\n
+                             Step 2:- Your body should form a straight line from your shoulders to your ankles. \n\n
+                             Step 3:- Squeeze your abs, lift one foot off the floor and bring your knee up towards your chest while keeping your body in as straight of a line as possible. \n\n
+                             Step 4:- Return to the starting position and repeat the movement with your opposite leg.. </string>
+    <string name="pose2">    Step 1:- Lie flat on your mat with knees bent and feet on the mat. Hands at the base ofyour head and elbows pointed out. Using your abdominals bring your head and shoulders off the mat and come up into a crunch, then lower with control. </string>
+    <string name="pose3">    Step 1:- This movement is performed with a bench and a foot stool.\n\n
+                             Step 2:- Place a bench behind yourself and rest on it with your hands. Place your legs straight out in front of you. You may also place them at an elevated level as shown above.\n\n
+                             Step 3:- Begin with arms in a fully. Slowly bend at your elbows keeping the rest of your body straight. Be sure to keep your elbows back and close together.\n\n
+                             Step 4:- Dip down until your arms form a 90 degree angle and you feel a stretch in the triceps.\n\n
+                             Step 5:- Slowly extend your arms raising your body back up. Pause and contract your triceps muscles at the top. Pause and repeat the movement.</string>
+    <string name="pose4">    Step 1:- Lie flat on the floor with your lower back pressed to the ground (pull your navel in to also target your deep abs). \n\n
+                             Step 2:- Put your hands behind your head, then bring your knees in towards your Chest and lift your shoulder blades off the ground, but be sure not to pull on your neck.\n\n
+                             Step 3:-Straighten your right leg out to about a 4S-degree angle to the ground while turning your upper body to the left, bringing your right elbow towards the left knee.\n\n
+                             Step 4:- Make sure your rib cage is moving and hotjust your elbows. Now switch sides and do the same motion on the other side to complete onerep. </string>
+    <string name="pose5">   Step 1:- Lay down with your hands to your sides for support. \n\n
+                             Step 2:- Raise your legs so they are off the ground, keeping the abdominals tight.\n\n
+                             Step 3:- Slowly raise your legs 90 degrees, contracting the abdominal muscles. Slowly return to starting position. Do not touch the floor with your feet.\n\n
+                            </string>
+
+
+    <string name="pose6">    Step 1:- Lie on your back on an exercise mat. With your arms straight at your sides, bend your knees and place your feet flat on the floor between18 and 24 inches apart.\n\n
+                             Step 2:- Breathing out, crunch your ab slightly upward and sideways to the right a couple of inches until your right hand touches your right heel.\n\n
+                             Step 3:- Hold brief|y and then return to your starting position while inhaling. Repeat on the left side. </string>
+    <string name="pose7">    Step 1:- You can perform straight-leg crunches by lying face up on the floor with your legs straight and then moving your upper body as you would for a standard bent-knee crunch.\n\n
+                             Step 2:- Alternatively, lie on your back, raise your legs so they are perpendicular to the floor and then perform the standard crunching motion with your torso.
+                             </string>
+    <string name="pose8">    Step 1:- Lie down on the floor placing your feet either under something that Will not move or by having a partner hold them. Your legs should be bent at the kneesPlace your hands behind your head and lock them together by claspihg your fingers. This is the starting position.\n\n
+                             Step 2:- Elevate your upper body so that it creates an imaginary V-shape with your thighs. Breathe out when performing this part of the exercise.\n\n
+                             Step 3:- Once you feel the contraction for a second, lower your upper body back down to the starting position while inhahng. \n\n
+                             Step 4:- Repeat for the recommended amount of repetitions.
+                            </string>
+    <string name="pose9">    Step 1:- Lying on the back,lift stright leg,extend opposite hand to touch toe. \n\n
+                             Step 2:- Please,return,alternate inhale down,exhale up at toe touch.
+                            </string>
+    <string name="pose10">    Step 1:- High Plank position then slowly rotate your torso to the side raising your arm till it gets ihlihe with the other one. \n\n
+                             Step 2:- Then return to the initial position.
+                            </string>
+    <string name="pose11">    Step 1:- Lie on the floor with elbows directly beneath your shoulders and legs fully extended.\n\n
+                             Step 2:- Raise your torso into the air until it makes a straight line from your shoulders to your ankles. Tighten your stomach, squeeze your butt.
+                            </string>
+    <string name="pose12">    Step 1:- Lie down on the floor placing your feet either under something that will not move or by having a partner hold them. Your legs should be bent at the knees. Elevate your upper body so that it creates an imaginary V-shape with your thighs. \n\n
+                             Step 2:- Your arms should be fully extended in front of you perpendicular to your torso and with the hands clasped. This is the starting position.\n\n
+                             Step 3:- This is the starting position. Twist your torso to the right side until your arms are parallel with the floor while breathing out. \n\n
+                             Step 4:- Hold the contraction for a second and move back to the starting position while breathing out. Now move to the opposite side performing the same techniques you applied to the right side. Repeat for the recommended amount of repetitions.
+                            </string>
+    <string name="pose13">    Step 1:- Lie on your back with your knees bent, feet flat and hip width. \n\n
+                             Step 2:- Lower your pelvis 2 inches from the floor. Squeeze your glutes and lift your pelvis back to bridge position.
+
+                            </string>
+    <string name="pose14">    Step 1:- Lie facedown on the floor with your arms extended in front of you and your leg extended behind you. \n\n
+                             Step 2:- In one movement,engage your glutes and lower back to raise your arms,legs,and chest off the floor.\n\n
+                             Step 3:- Hold for a count,then slowly return to the starting position.
+                            </string>
+    <string name="pose15">   Step 1:- Stand, extend arms 90° to sides, bend forward 90° at waist.\n\n
+                             Step 2:- Looking at the floor, rotate torso to touch hand to foot, rotate for other hand. \n\n
+                             Step 3:- Head will follow chest action. </string>
+
+
+    <string name="ADMOB_ADS_UNIT_ID">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="ad_attribution">Ad</string>
+</resources>

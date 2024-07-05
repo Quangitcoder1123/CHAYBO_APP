@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "55071833089",
+    "firebase_url": "https://inshorts-af988-default-rtdb.firebaseio.com",
+    "project_id": "inshorts-af988",
+    "storage_bucket": "inshorts-af988.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55071833089:android:823866d2535cd6d9e41400",
+        "android_client_info": {
+          "package_name": "in.project.Activelife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55071833089-tuo9bk8en07es8t8pkuvm88grg9prv20.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHdRRLJnhFJq9ekheXzjT63LzhWFX3zjw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "55071833089-tuo9bk8en07es8t8pkuvm88grg9prv20.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

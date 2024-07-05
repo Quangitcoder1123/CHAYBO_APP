@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="#CDF0FF"
+    tools:context="in.project.Activelife.Diet.proteins_page">
+    >
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@color/background"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/back"
+            android:drawableLeft="@drawable/ic_baseline_arrow_back_24"
+            android:textColor="#000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Search food"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingEnd="40sp"
+            android:textSize="20dp"/>
+
+
+
+
+    </androidx.appcompat.widget.Toolbar>
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="300dp"
+        android:layout_height="45sp"
+        android:layout_marginTop="5dp"
+
+
+        android:autofillHints="search"
+        android:background="@drawable/border"
+        android:baselineAligned="false"
+
+        android:inputType="textFilter|text" />
+
+
+
+
+    <include
+
+        layout="@layout/recipe_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"></include>
+    <ProgressBar
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/progressBar"/>
+
+
+
+</LinearLayout>

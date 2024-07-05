@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>stop watch</title>
+    <style>
+body {
+  background-image:url("");
+   background-repeat: no-repeat;
+   background-size: auto;
+}
+h1 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+input {
+    padding:4px;}
+
+div {
+    padding:16px;
+    text-align:center;
+}
+
+#switch {
+  margin: 0 auto;
+}
+
+#stopwatch, #countdown, input[type="button"] {
+  text-decoration: none;
+  color: #FFF;
+  background-color: #3F51B5;
+  text-align: center;
+  letter-spacing: .5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  outline: 0;
+  padding: 0 1rem;
+  text-transform: uppercase;
+  vertical-align: middle;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  text-indent: 0px;
+
+}
+
+span {
+  font-size: 40px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+}
+
+#minutes {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+#stopwatch, #countdown {
+  width: 350px;
+}
+</style>
+</head>
+
+<body>
+<script src="https://code.jquery.com/jquery-1.5.2.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
+<meta name="viewport" content="width=device-width, user-scalable=no"></meta>
+<div id="s">
+    <h1>Stopwatch</h1>
+    <span id="sw_h">00</span><span>&nbsp;:</span>
+    <span id="sw_m">00</span><span>&nbsp;:</span>
+    <span id="sw_s">00</span><span>&nbsp;:</span>
+    <span id="sw_ms">00</span>
+    <br/>
+    <br/>
+    <input type="button" value="START" id="sw_start" />
+    <input type="button" value="PAUSE" id="sw_pause" />
+    <input type="button" value="RESET" id="sw_reset" />
+    <br/>
+    <br/>
+</div>
+<div id="c">
+    <h1>Countdown</h1>
+    <span id="cd_h">00</span><span>&nbsp;:</span>
+    <span id="cd_m">00</span><span>&nbsp;:</span>
+    <span id="cd_s">00</span><span>&nbsp;:</span>
+    <span id="cd_ms">00</span>
+    <br/>
+    <br/>
+    <input type="button" value="START" id="cd_start" />
+    <input type="button" value="PAUSE" id="cd_pause" />
+    <input type="button" value="RESET" id="cd_reset" />
+    <br/>
+    <br/>
+    <input type="number" value="15" id="cd_minutes" />
+    <i id="minutes">Minutes</i>
+</div><br><br><br><br>
+<div id="switch">
+    <button id="stopwatch">STOPWATCH</button>
+    <p style="margin: 0px;height: 5px;"></p><br>
+    <button id="countdown">COUNTDOWN</button>
+</div>
+
+<script>
+$(document).ready(function() {
+    (function($){
+        $.extend({
+            APP : {
+                formatTimer : function(a) {
+                    if (a < 10) {
+                        a = '0' + a;
+                    }
+                    return a;
+                },
+                startTimer : function(dir) {
+                    var a;
+                    // save type
+                    $.APP.dir = dir;
+                    // get current date
+                    $.APP.d1 = new Date();
+                    switch($.APP.state) {
+                        case 'pause' :
+                            // resume timer
+                            // get current timestamp (for calculations) and
+                            // substract time difference between pause and now
+                            $.APP.t1 = $.APP.d1.getTime() - $.APP.td;
+                        break;
+                        default :
+                            // get current timestamp (for calculations)
+                            $.APP.t1 = $.APP.d1.getTime();
+                            // if countdown add ms based on seconds in textfield
+                            if ($.APP.dir === 'cd') {
+                                $.APP.t1 += parseInt($('#cd_minutes').val())*60000;
+                            }
+                        break;
+                    }
+                    // reset state
+                    $.APP.state = 'alive';
+                    // start loop
+                    $.APP.loopTimer();
+
+                },
+                pauseTimer : function() {
+                    // save timestamp of pause
+                    $.APP.dp = new Date();
+                    $.APP.tp = $.APP.dp.getTime();
+                    // save elapsed time (until pause)
+                    $.APP.td = $.APP.tp - $.APP.t1;
+                    // change button value
+                    $('#' + $.APP.dir + '_start').val('Resume');
+                    // set state
+                    $.APP.state = 'pause';
+                },
+                  resetTimer : function() {
+                    // reset display
+                    $('#' + $.APP.dir + '_ms,#' + $.APP.dir + '_s,#' + $.APP.dir + '_m,#' + $.APP.dir + '_h').html('00');
+                    // change button value
+                    $('#' + $.APP.dir + '_start').val('Start');
+                    // set state
+                    $.APP.state = 'reset';
+                },
+                endTimer : function(callback) {
+                    // change button value
+                    $('#' + $.APP.dir + '_start').val('Restart');
+                    // set state
+                    $.APP.state = 'end';
+                    // invoke callback
+                    if (typeof callback === 'function') {
+                        callback();
+                    }
+                },
+                loopTimer : function() {
+                    var td;
+                    var d2,t2;
+                    var ms = 0;
+                    var s  = 0;
+                    var m  = 0;
+                    var h  = 0;
+                    if ($.APP.state === 'alive') {
+                        // get current date and convert it into
+                        // timestamp for calculations
+                        d2 = new Date();
+                        t2 = d2.getTime();
+                        // calculate time difference between
+                        // initial and current timestamp
+                        if ($.APP.dir === 'sw') {
+                            td = t2 - $.APP.t1;
+                        // reversed if countdown
+                        } else {
+                            td = $.APP.t1 - t2;
+                            if (td <= 0) {
+                                // if time difference is 0 end countdown
+                                $.APP.endTimer(function(){
+                                    $.APP.resetTimer();
+                                });
+                            }
+                        }
+                        // calculate milliseconds
+                        ms = td%1000;
+                        if (ms < 1) {
+                            ms = 0;
+                        } else {
+                            // calculate seconds
+                            s = (td-ms)/1000;
+                            if (s < 1) {
+                                s = 0;
+                            } else {
+                                // calculate minutes
+                                var m = (s-(s%60))/60;
+                                if (m < 1) {
+                                    m = 0;
+                                } else {
+                                    // calculate hours
+                                    var h = (m-(m%60))/60;
+                                    if (h < 1) {
+                                        h = 0;
+                                    }
+                                }
+                            }
+                        }
+                        // substract elapsed minutes & hours
+                        ms = Math.round(ms/100);
+                        s  = s-(m*60);
+                        m  = m-(h*60);
+                        // update display
+                        $('#' + $.APP.dir + '_ms').html($.APP.formatTimer(ms));
+                        $('#' + $.APP.dir + '_s').html($.APP.formatTimer(s));
+                        $('#' + $.APP.dir + '_m').html($.APP.formatTimer(m));
+                        $('#' + $.APP.dir + '_h').html($.APP.formatTimer(h));
+                        // loop
+                        $.APP.t = setTimeout($.APP.loopTimer,1);
+                    } else {
+                        // kill loop
+                        clearTimeout($.APP.t);
+                        return true;
+                    }
+                }
+            }
+        });
+        $('#sw_start').live('click', function() {
+            $.APP.startTimer('sw');
+        });
+        $('#cd_start').live('click', function() {
+            $.APP.startTimer('cd');
+        });
+        $('#sw_reset,#cd_reset').live('click', function() {
+            $.APP.resetTimer();
+        });
+        $('#sw_pause,#cd_pause').live('click', function() {
+            $.APP.pauseTimer();
+        });
+    })(jQuery);
+});
+
+$( "#stopwatch" ).click(function() {
+  $("#s").toggle();
+  $("#c").hide();
+  $.APP.resetTimer();
+});
+$( "#countdown" ).click(function() {
+  $("#c").toggle();
+  $("#s").hide();
+  $.APP.resetTimer();
+});
+$(document).ready(function() {
+  $("#c").hide();
+  $("#s").hide();
+})
+</script>
+</body>
+</html>

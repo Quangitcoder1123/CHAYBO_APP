@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="in.project.Activelife">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+
+    <uses-feature android:name="android.hardware.sensor.accelerometer" />
+
+    <uses-permission
+        android:name="android.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/iconlogo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/iconlogo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".more.donate"
+          />
+
+        <activity android:name=".Diet.food_desc" />
+        <activity android:name=".Exercise.view.DetailExActivity" />
+        <activity android:name=".Exercise.view.ExerciseMoreActive" />
+        <activity android:name=".Diet.proteins_page" />
+        <activity android:name=".news.newActivity" />
+        <activity android:name=".news.news_desc" />
+        <activity android:name=".more.chart_page" />
+        <activity android:name=".more.user_page" />
+        <activity android:name=".more.feedback_page" />
+        <activity android:name=".more.human_body" />
+        <activity android:name=".exer.ThirdActivity2" />
+        <activity android:name=".exer.ThirdActivity" />
+        <activity android:name=".exer.SecondActivity" />
+        <activity android:name=".exer.SecondActivity2" />
+        <activity android:name=".joining_from" />
+        <activity android:name=".countstep.PedometerListActivity" />
+        <activity android:name=".more.Calculate_page" />
+        <activity android:name=".more.Calendar_page" />
+        <activity android:name=".more.Reminders_page" />
+        <activity android:name=".stopwatch.stop_watch_page" />
+        <activity android:name=".home.Home_page" />
+        <activity android:name=".slider.slider" />
+        <activity
+            android:name=".mainpage.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".more.AlertReceiver" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <service android:name=".countstep.StepsService" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713" />
+    </application>
+
+</manifest>

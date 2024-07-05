@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@drawable/splash"
+    tools:context="in.project.Activelife.mainpage.MainActivity">
+
+    <ImageView
+        android:id="@+id/appsplash"
+        android:layout_width="282dp"
+        android:layout_height="234dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="72dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="281dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginRight="57dp"
+        android:src="@drawable/iconlogo" />
+
+    <TextView
+            android:id="@+id/appname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Active Life"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:textColor="#FFF"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="150dp">
+        </TextView>
+
+    </RelativeLayout>
+

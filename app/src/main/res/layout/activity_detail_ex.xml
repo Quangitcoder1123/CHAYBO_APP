@@ -1,0 +1,159 @@
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="in.project.Activelife.Exercise.view.DetailExActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@color/background"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/back"
+            android:drawableLeft="@drawable/ic_baseline_arrow_back_24"
+            android:textColor="#000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Do exercise"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20dp"/>
+
+
+    </androidx.appcompat.widget.Toolbar>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:fillViewport="true"
+        android:padding="20sp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+
+
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="monospace"
+                        android:text="Name"
+
+                        android:textAllCaps="true"
+                        android:textColor="#FF000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:textColor="@color/black"
+                        android:id="@+id/tv_catefory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:text="Category"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="20sp"
+                android:background="@drawable/button_ji"
+                android:padding="7dp"
+                android:text="How To Do This"
+                android:textAlignment="center"
+                android:textColor="#686060"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:textColor="@color/black"
+                android:id="@+id/videoTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Video:"
+                android:textSize="20sp"/>
+            <LinearLayout
+                android:id="@+id/ln_video"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/youtube"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_gravity="center"
+                android:background="@drawable/base"
+                android:padding="10sp"
+                android:text="Watch video tutorials from youtube"
+                android:visibility="visible" />
+
+
+
+
+            <TextView
+                android:textColor="@color/black"
+                android:id="@+id/stepsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Steps:"
+                android:textSize="20sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/steps_list"
+                android:padding="5sp"
+                android:orientation="vertical"
+                >
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/detailsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Details:"
+                android:textColor="@color/black"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:textColor="@color/black"
+                android:id="@+id/detailsDetailsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
