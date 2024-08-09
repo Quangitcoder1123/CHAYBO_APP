@@ -1,4 +1,4 @@
-Exercise App
+# Exercise App
 ## STEP COUNTER SENSOR AND STEP DETECTION SENSOR ON MOBILE PHONES
 
 ### Step Counter Sensor
